@@ -1,4 +1,4 @@
-# KO – Cart Icon
+# vela: Cart Icon
 
 Small WordPress plugin that adds a Divi-friendly DEX part cart icon shortcode with an overlayed product count badge.
 
@@ -20,7 +20,7 @@ Optional overrides:
 [ko_cart_icon url="/cart/" label="Open cart"]
 ```
 
-The admin page is available under `Settings > KO Cart Icon` and follows the KO Enterprise API Connector admin screen style.
+The admin page is available under `Settings > vela: Cart Icon` and follows the KO Enterprise API Connector admin screen style.
 
 ## Settings
 

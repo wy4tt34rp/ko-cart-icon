@@ -1,5 +1,5 @@
-=== KO – Cart Icon ===
-Contributors: KO
+=== vela: Cart Icon ===
+Author: Kevin ONeill
 Tags: dex, divi, cart, shortcode, icons
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -12,11 +12,11 @@ Adds a Divi-friendly DEX part cart icon shortcode with an overlayed product coun
 
 == Description ==
 
-KO – Cart Icon provides the `[ko_cart_icon]` shortcode for use in Divi layouts, Code Modules, headers, or shortcode-aware theme areas.
+vela: Cart Icon provides the `[ko_cart_icon]` shortcode for use in Divi layouts, Code Modules, headers, or shortcode-aware theme areas.
 
 The shortcode reads the legacy DEX part cart count from `KO_Page_Part_Cart::item_count()`, `ko_get_part_cart()`, or the serialized `ko_part_cart` cookie fallback. When the cart has products, it shows the count over the cart icon. When the cart is empty, only the cart icon is shown and the icon uses the configured empty-state color.
 
-The settings screen under Settings > KO Cart Icon follows the KO Enterprise API Connector admin style and allows admins to change:
+The settings screen under Settings > vela: Cart Icon follows the KO Enterprise API Connector admin style and allows admins to change:
 
 * Empty cart icon color
 * Added cart icon color
@@ -77,8 +77,8 @@ Optional shortcode attributes:
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/` or upload the ZIP in Plugins > Add New.
-2. Activate KO – Cart Icon.
-3. Go to Settings > KO Cart Icon.
+2. Activate vela: Cart Icon.
+3. Go to Settings > vela: Cart Icon.
 4. Place `[ko_cart_icon]` in a Divi Code Module or shortcode-aware area.
 
 == Changelog ==

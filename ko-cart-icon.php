@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: KO – Cart Icon
+ * Plugin Name: vela: Cart Icon
  * Description: Adds a Divi-friendly DEX cart icon shortcode with an overlayed cart product count.
  * Version: 1.0.6
- * Author: KO
- * Author URI: mailto:6822858@kevinoneill.us
+ * Author: Kevin ONeill
+ * Author URI: mailto:ko@velaagency.com?subject=vela%3A%20Cart%20Icon
  * License: GPLv2 or later
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -183,8 +183,8 @@ if ( ! class_exists( 'KO_Cart_Icon' ) ) {
 
 		public static function register_admin_menu() {
 			add_options_page(
-				__( 'KO Cart Icon', 'ko-cart-icon' ),
-				__( 'KO Cart Icon', 'ko-cart-icon' ),
+				__( 'vela: Cart Icon', 'ko-cart-icon' ),
+				__( 'vela: Cart Icon', 'ko-cart-icon' ),
 				'manage_options',
 				self::ADMIN_PAGE_SLUG,
 				array( __CLASS__, 'render_admin_page' )
@@ -319,7 +319,7 @@ if ( ! class_exists( 'KO_Cart_Icon' ) ) {
 					<?php endif; ?>
 
 					<section class="ko-ci-hero">
-						<h1><?php esc_html_e( 'KO – Cart Icon', 'ko-cart-icon' ); ?></h1>
+						<h1><?php esc_html_e( 'vela: Cart Icon', 'ko-cart-icon' ); ?></h1>
 						<p><?php esc_html_e( 'A shortcode-ready cart icon for Divi layouts. It reads the legacy DEX part cart count, shows a badge only when products are in the cart, and keeps the empty state grayed out by default.', 'ko-cart-icon' ); ?></p>
 						<div class="ko-ci-badges">
 							<span class="ko-ci-badge-pill"><?php esc_html_e( 'DEX Part Cart Count', 'ko-cart-icon' ); ?></span>
@@ -454,7 +454,7 @@ if ( ! class_exists( 'KO_Cart_Icon' ) ) {
 
 									<div class="ko-ci-actions">
 										<button type="submit" name="ko_cart_icon_action" value="save" class="button button-primary"><?php esc_html_e( 'Save Settings', 'ko-cart-icon' ); ?></button>
-										<button type="submit" name="ko_cart_icon_action" value="reset" class="button button-secondary" onclick="return confirm('Reset KO Cart Icon settings?');"><?php esc_html_e( 'Reset Settings', 'ko-cart-icon' ); ?></button>
+										<button type="submit" name="ko_cart_icon_action" value="reset" class="button button-secondary" onclick="return confirm('Reset vela: Cart Icon settings?');"><?php esc_html_e( 'Reset Settings', 'ko-cart-icon' ); ?></button>
 									</div>
 								</form>
 							</section>
@@ -508,7 +508,7 @@ if ( ! class_exists( 'KO_Cart_Icon' ) ) {
 					</div>
 
 					<div class="ko-ci-footer-card">
-						<p><?php echo esc_html( sprintf( __( 'KO – Cart Icon v%s', 'ko-cart-icon' ), self::VERSION ) ); ?></p>
+						<p><?php echo esc_html( sprintf( __( 'vela: Cart Icon v%s', 'ko-cart-icon' ), self::VERSION ) ); ?></p>
 					</div>
 				</div>
 			</div>
@@ -1000,3 +1000,26 @@ if ( ! class_exists( 'KO_Cart_Icon' ) ) {
 
 	KO_Cart_Icon::init();
 }
+
+/**
+ * Add the plugin readme and Vela links to this plugin's row metadata.
+ *
+ * @param string[] $plugin_meta Existing plugin metadata.
+ * @param string   $plugin_file Plugin path relative to the plugins directory.
+ * @return string[]
+ */
+add_filter(
+	'plugin_row_meta',
+	static function ( $plugin_meta, $plugin_file ) {
+		if ( plugin_basename( __FILE__ ) !== $plugin_file ) {
+			return $plugin_meta;
+		}
+
+		$plugin_meta[] = '<a href="' . esc_url( plugins_url( 'plugin-details.md', __FILE__ ) ) . '" target="_blank" rel="noopener noreferrer">View Details</a>';
+		$plugin_meta[] = '<a href="' . esc_url( 'https://velaagency.com' ) . '" target="_blank" rel="noopener noreferrer">Vela</a>';
+
+		return $plugin_meta;
+	},
+	10,
+	2
+);
